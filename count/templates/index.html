@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        h1{
+      font-size: 2em;
+    color: rgb(18, 6, 129);
+        }
+    </style>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+<body>
+        <!-- <img src="C:\Users\sunil\Desktop\New folder\HWI\show_result\count\templates\hackwithinfy.png" alt="hack"> -->
+
+        <div class="jumbotron jumbotron-fluid">
+                <div class="container">
+                 <center> <h1 class="display-4">Vegetation Management</h1></center>
+                  <p class="lead">
+                        Power line which passes through the forest frequently causes <b>FOREST FIRE</b> and create a problem of power supply so to save from such condition we are monitoring the hight of the tree near to wire and categories it into 3 part. The first category is Danger which is very near to wire and it is necessary to cut it immediately and the second category is Waring which mean these trees should be cut within 1 year 
+                        and the third one is Safe category if the hight of the tree is very small.  
+
+
+                    </p>
+                </div>
+              </div>
+
+              <div class="row">
+                    <div class="alert alert-danger col-sm-4" role="alert">
+                           <center> <h1>DANGER</h1></center>
+                           <table class="table table-striped .table-hover">
+                           <tr>
+                               <!-- <th>S.NO</th> -->
+                               <th>Tree Left Corner</th>
+                               <th>Tree Right Corner</th>
+                               <th>Height</th>
+                               </tr>
+                               <!-- {% with dan=1 %} -->
+                               {% for r in results %}
+                               <!-- <br> -->
+                               <!-- {{r.0}} -->
+                               {% if r.4 > 1500 %}
+                               <tr>
+                                   <!-- <td>{{dan}}</td> -->
+                               <td>
+                                   {{r.0}} &nbsp;&nbsp;{{r.1}}
+                               </td>
+                               <td>
+                                {{r.2}} &nbsp;&nbsp;{{r.3}}
+
+                                </td>
+                                <td>
+                                    {{r.4}}
+
+                                    </td>
+                                     
+                                </tr>
+                               
+                                {% endif %}
+                                {% endfor %}
+                                {% endwith %}
+
+
+
+
+                           
+                           
+
+
+
+
+                           </table>
+
+
+
+                          <!-- This is a danger alert—check it out! -->
+                        </div>
+                        <div class="alert alert-warning col-sm-4" role="alert">
+                                <center><h1>WARNING</h1></center>
+                                <table class="table table-striped .table-hover">
+                                    <tr>
+                                        <th>Tree Left Corner</th>
+                                        <th>Tree Right Corner</th>
+                                        <th>Height</th>
+                                        </tr>
+                                        {% for r in results %}
+                                        <!-- <br> -->
+                                        <!-- {{r.0}} -->
+                                        {% if r.4 <= 1500 and r.4 >= 1450 %}
+                                        <tr>
+                                        <td>
+                                            {{r.0}} &nbsp;&nbsp;{{r.1}}
+                                        </td>
+                                        <td>
+                                         {{r.2}} &nbsp;&nbsp;{{r.3}}
+         
+                                         </td>
+                                         <td>
+                                             {{r.4}}
+         
+                                             </td>
+                                              
+                                         </tr>
+                                         {% endif %}
+                                         {% endfor %}
+         
+         
+         
+         
+                                    
+                                    
+         
+         
+         
+         
+                                    </table>
+         
+                            
+                                <!-- This is a warning alert—check it out! -->
+                            </div>
+                <div class="alert alert-success col-sm-4" role="alert">
+                        
+                    
+                    <center><h1>NORMAL</h1></center>
+                    <table class="table table-striped .table-hover">
+                        <tr>
+                            <th>Tree Left Corner</th>
+                            <th>Tree Right Corner</th>
+                            <th>Height</th>
+                            </tr>
+                            {% for r in results %}
+                            <!-- <br> -->
+                            <!-- {{r.0}} -->
+                            {% if r.4 < 1450%}
+                            <tr>
+                            <td>
+                                {{r.0}} &nbsp;&nbsp;{{r.1}}
+                            </td>
+                            <td>
+                             {{r.0}} &nbsp;&nbsp;{{r.1}}
+
+                             </td>
+                             <td>
+                                 {{r.4}}
+
+                                 </td>
+                                  
+                             </tr>
+                             {% endif %}
+                             {% endfor %}
+
+
+
+
+                        
+                        
+
+
+
+
+                        </table>
+
+                    <!-- This is a success alert—check it out! -->
+                  </div>
+                  
+                 
+                </div>
+
+
+              
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
